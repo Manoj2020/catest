@@ -1,0 +1,277 @@
+<testsuite errors="0" failures="8" hostname="MEWS1" name="api_test_create_peps.Create PEPS" skipped="0" tests="12" time="1.091638" timestamp="2020-07-02T14:58:44.987710"><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with valid data -- @1.1 validData" status="passed" time="0.133452"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps1
+  Scenario Outline: Create politicians with valid data -- @1.1 validData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.001s
+    And I build the HTTP header details ... passed in 0.000s
+    And I build create peps POST http body with "John Doe", "Wales", "1970", "Minister of Perry" and "1" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.126s
+    Then I verify the response http code 201 ... passed in 0.001s
+    Then I validate POST response json schema ... passed in 0.002s
+    And I validate response message generated id is not null ... passed in 0.001s
+    And I validate response message ok is true ... passed in 0.001s
+    And I validate message field value ... passed in 0.001s
+    And I validate response id value is not null ... passed in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with valid data -- @1.2 validData" status="passed" time="0.069114"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps1
+  Scenario Outline: Create politicians with valid data -- @1.2 validData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.001s
+    And I build the HTTP header details ... passed in 0.001s
+    And I build create peps POST http body with "John Smith", "England", "1980", "Minister of Ales" and "2" details ... passed in 0.001s
+    When I send the POST request ... passed in 0.065s
+    Then I verify the response http code 201 ... passed in 0.000s
+    Then I validate POST response json schema ... passed in 0.000s
+    And I validate response message generated id is not null ... passed in 0.000s
+    And I validate response message ok is true ... passed in 0.000s
+    And I validate message field value ... passed in 0.001s
+    And I validate response id value is not null ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with valid data -- @1.3 validData" status="passed" time="0.092407"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps1
+  Scenario Outline: Create politicians with valid data -- @1.3 validData
+    Given I have access to the politician API Service Environment ... passed in 0.001s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.000s
+    And I build create peps POST http body with "Jane Doe", "Scotland", "1981", "Minister of Single Malts" and "3" details ... passed in 0.001s
+    When I send the POST request ... passed in 0.085s
+    Then I verify the response http code 201 ... passed in 0.001s
+    Then I validate POST response json schema ... passed in 0.001s
+    And I validate response message generated id is not null ... passed in 0.001s
+    And I validate response message ok is true ... passed in 0.000s
+    And I validate message field value ... passed in 0.001s
+    And I validate response id value is not null ... passed in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with valid data -- @1.4 validData" status="passed" time="0.143018"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps1
+  Scenario Outline: Create politicians with valid data -- @1.4 validData
+    Given I have access to the politician API Service Environment ... passed in 0.001s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.000s
+    And I build create peps POST http body with "Jane Smith", "Nothern Ireland", "1982", "Minister of Guinness" and "4" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.141s
+    Then I verify the response http code 201 ... passed in 0.000s
+    Then I validate POST response json schema ... passed in 0.001s
+    And I validate response message generated id is not null ... passed in 0.000s
+    And I validate response message ok is true ... passed in 0.000s
+    And I validate message field value ... passed in 0.000s
+    And I validate response id value is not null ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.1 invalidData" status="failed" time="0.075814"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.000s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.1 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.001s
+    And I build the HTTP header details ... passed in 0.000s
+    And I build create peps POST http body with "John Doe", "Wales", "1970", "Minister 	of Perry" and "10" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.075s
+    Then I verify the response http code is not 201 ... failed in 0.000s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.2 invalidData" status="failed" time="0.090739"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.000s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.2 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.001s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.001s
+    And I build create peps POST http body with "John Smith", "England", "2025", "Minister of Ales" and "2" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.089s
+    Then I verify the response http code is not 201 ... failed in 0.000s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.3 invalidData" status="failed" time="0.06941"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.000s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.3 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.000s
+    And I build create peps POST http body with "Jane Doe", "Scotland", "1600", "Minister of Single Malts" and "3" details ... passed in 0.001s
+    When I send the POST request ... passed in 0.068s
+    Then I verify the response http code is not 201 ... failed in 0.000s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.4 invalidData" status="failed" time="0.071483"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.000s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.4 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.001s
+    And I build create peps POST http body with "Jane Smith", "Nothern Ireland", "1982", "Minister of Guinness" and "4" details ... passed in 0.001s
+    When I send the POST request ... passed in 0.070s
+    Then I verify the response http code is not 201 ... failed in 0.000s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.5 invalidData" status="failed" time="0.081146"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.001s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.5 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.001s
+    And I build create peps POST http body with "!"£n#~@@@@@"£$", "Wales", "1970", "Minister 	of Perry" and "1" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.079s
+    Then I verify the response http code is not 201 ... failed in 0.001s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.6 invalidData" status="failed" time="0.095225"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.001s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.6 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.001s
+    And I build the endpoint to access politician API ... passed in 0.001s
+    And I build the HTTP header details ... passed in 0.001s
+    And I build create peps POST http body with "John Smith", "Pen island", "202025", "Minister of Ales" and "2" details ... passed in 0.001s
+    When I send the POST request ... passed in 0.090s
+    Then I verify the response http code is not 201 ... failed in 0.001s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.7 invalidData" status="failed" time="0.090919"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.001s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.7 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.000s
+    And I build create peps POST http body with "Jane Doe", "Scotland", "2006", "Minister of Single Malts" and "3" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.090s
+    Then I verify the response http code is not 201 ... failed in 0.001s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="api_test_create_peps.Create PEPS" name="Create politicians with invalid data -- @1.8 invalidData" status="failed" time="0.078912"><failure message="The HTTP status code should not be 201" type="AssertionError">
+<![CDATA[
+Failing step: Then I verify the response http code is not 201 ... failed in 0.000s
+Location: features/api_test_create_peps.feature:33
+Assertion Failed: The HTTP status code should not be 201]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @createpeps2
+  Scenario Outline: Create politicians with invalid data -- @1.8 invalidData
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.001s
+    And I build the HTTP header details ... passed in 0.001s
+    And I build create peps POST http body with "Inglorious Bastard", "United Kingdom", "1982", "Prime Minister" and "5" details ... passed in 0.000s
+    When I send the POST request ... passed in 0.077s
+    Then I verify the response http code is not 201 ... failed in 0.000s
+    And I validate response message ok is not true ... skipped in 0.000s
+    And I validate message field value is not successful ... skipped in 0.000s
+    And I validate response id value is null ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

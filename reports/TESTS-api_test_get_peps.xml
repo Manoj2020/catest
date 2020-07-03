@@ -1,0 +1,22 @@
+<testsuite errors="0" failures="1" hostname="MEWS1" name="api_test_get_peps.Get PEPS" skipped="0" tests="1" time="0.255317" timestamp="2020-07-02T14:58:45.250010"><testcase classname="api_test_get_peps.Get PEPS" name="Get politicians" status="failed" time="0.255317"><failure message="There should be only 5 records, it returned: 10" type="AssertionError">
+<![CDATA[
+Failing step: Then I validate the response has 5 politicians records ... failed in 0.000s
+Location: features/api_test_get_peps.feature:11
+Assertion Failed: There should be only 5 records, it returned: 10]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Get politicians
+    Given I have access to the politician API Service Environment ... passed in 0.000s
+    And I build the endpoint to access politician API ... passed in 0.000s
+    And I build the HTTP header details ... passed in 0.000s
+    When I send the GET request ... passed in 0.253s
+    Then I verify the response http code is 200 ... passed in 0.000s
+    Then I validate GET response json schema ... passed in 0.001s
+    Then I validate that they are in descending order by date of creation ... passed in 0.001s
+    Then I validate the response has 5 politicians records ... failed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

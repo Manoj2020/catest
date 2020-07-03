@@ -1,0 +1,58 @@
+######################################################################
+Author: Manoj de Almeida
+Date: 03/07/2020
+Description: The test folder contains API tests for http://qa-test.data-playground-1.ivxs.uk/peps interface
+             It was build with BDD testing techniques
+Feature Files: (test/features)
+                api_test_create_peps.feature
+                api_test_get_peps.feature
+                api_test_get_peps_by_id.feature
+
+Script Definition file: (test/features/steps)
+                step_def_peps.py
+
+Other Files: (test)
+                schemas.py - class file for returned response schema definition
+                README.text - This file
+
+Latest Test Execution Results:
+                                failed  : 13
+                                passed  : 131
+  (due to previous step failed) ignored : 24
+
+  results and reports:
+        junit reports: test/reports
+        allure results: test/results (I have not generated allure report due to issues with windows & time constraints)
+
+
+#######################################################################
+Python Environment:The Python environment has been configured with following packages:(I have used conda)
+#######################################################################
+Python=3.7
+Behave - BDD test framework
+requests
+json
+jsonschema - json Schema validation
+allure-behave - test reporting
+########################################################################
+Test Execution:
+########################################################################
+# Run all BDD scenarios / all feature files in the test folder
+behave
+
+# Run all scenarios in a specific feature file
+behave features/api_test_create_peps.feature
+
+# Filter tests by tag (not fully implemented)
+behave --tags-help
+behave --tags @createpeps
+
+# Run with allure reports
+behave -f allure_behave.formatter:AllureFormatter -o ./results ./features
+allure serve ./results
+
+# Write a JUnit report (useful for Jenkins and other CI tools with plugins)
+behave --junit
+
+#######################################################
+IDE used: Pycharm Professional as community doesn't support BDD
